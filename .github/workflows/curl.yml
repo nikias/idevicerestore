@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   build-windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     defaults:
       run:
         shell: msys2 {0}
@@ -44,7 +44,7 @@ jobs:
     - name: configure curl
       run: |
           cd curl-8.10.1
-          ./configure --disable-ldap --disable-ldaps --disable-rtsp --disable-dict --disable-telnet --disable-tftp --disable-pop3 --disable-imap --disable-smb --disable-smtp --disable-gopher --disable-mqtt --disable-manual --disable-threaded-resolver --disable-pthreads --disable-sspi --disable-aws --disable-ntlm --disable-ntlm-wb --disable-tls-srp --disable-unix-sockets --disable-doh --disable-mime --disable-dnsshuffle --disable-alt-svc --disable-hsts --disable-websockets --with-openssl --without-brotli --without-libidn2 --without-ngtcp2 --without-quiche --without-msh3 --without-nghttp2 --without-libpsl
+          ./configure --disable-ldap --disable-ldaps --disable-rtsp --disable-dict --disable-telnet --disable-tftp --disable-pop3 --disable-imap --disable-smb --disable-smtp --disable-gopher --disable-mqtt --disable-manual --disable-threaded-resolver --disable-pthreads --disable-sspi --disable-aws --disable-ntlm --disable-ntlm-wb --disable-tls-srp --disable-unix-sockets --disable-doh --disable-dnsshuffle --disable-alt-svc --disable-hsts --disable-websockets --with-openssl --without-brotli --without-libidn2 --without-ngtcp2 --without-quiche --without-msh3 --without-nghttp2 --without-libpsl
     - name: build libcurl
       run: |
           CURDIR=`pwd`
